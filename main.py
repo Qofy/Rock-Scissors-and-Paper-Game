@@ -6,8 +6,12 @@
 #and terminate it
 
 import random
-chioces = ("r", "s", "p")
-emoji = {"r": "🗿", "s": "✂", "p":"📜"}
+Rock = "r"
+Scisscors = "s"
+Paper = "p"
+emoji = {Rock: "🗿", Scisscors: "✂", Paper:"📜"}
+chioces = tuple(emoji.keys())
+
 def get_user_choice():
     while True:
          user_choice = input("Rock, Scissors, or Paper (r/s/p): ")
@@ -21,9 +25,9 @@ def display_choice(user_choice, computer_choice):
 def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
         print("Tie")
-    elif ((user_choice == "r" and computer_choice == "p") or
-          (user_choice == "r" and computer_choice == "s") or
-          (user_choice == "s" and computer_choice == "p")
+    elif ((user_choice == Rock and computer_choice == Paper) or
+          (user_choice == Rock and computer_choice == Scisscors) or
+          (user_choice == Scisscors and computer_choice == Paper)
     ):
         print("You win 🎉")
     else:
